@@ -1,0 +1,83 @@
+
+{% extends "base.html" %}
+{% block title %}View Page{% endblock %}
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for msg in messages %}
+<p>{{msg}}</p>
+{% endfor %} 
+{% endif %}
+{% endwith %}
+{% for item in values %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+   .card {
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   max-width: 300px;
+   margin: auto;
+   text-align: center;
+   font-family: arial;
+   }
+   .title {
+   color: grey;
+   font-size: 18px;
+   }
+   button {
+   border: none;
+   outline: 0;
+   display: inline-block;
+   padding: 8px;
+   color: white;
+   background-color: #000;
+   text-align: center;
+   cursor: pointer;
+   width: 100%;
+   font-size: 18px;
+   }
+   a {
+   text-decoration: none;
+   font-size: 22px;
+   color: black;
+   }
+   button:hover, a:hover {
+   opacity: 0.7;
+   }
+</style>
+<style>
+
+
+
+/* Rounded border */
+hr.rounded {
+  border-top: 15px solid #bac;
+  border-radius: 5px;
+}
+</style>
+<h1>{{item.date_created}}</h1>
+<div class="card">
+<img src="https://image.flaticon.com/icons/png/512/44/44948.png" style="width:100%">
+<h1>{{item.name}}</h1>
+
+{% if item.email %}
+	<p class="title">Mail:{{item.email}}</p>
+        {% if item.occu %}
+            <p class="title">[{{item.occu}}]</p>
+        {% else %}
+            <p class="title">Occupation:</p>
+        {% endif %}
+{% else %}
+	<p class="title">Mail:NO Mail</p>
+{% endif %}
+
+<hr class="rounded">
+
+{% endfor %}
+
+{% endblock %}

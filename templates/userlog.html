@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}user Page{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>	
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+	            {% for msg in messages %}
+			<p>{{msg}}</p>
+		    {% endfor %} 
+		{% endif %}
+	{% endwith %}
+<h1>welcome to user page</h1>
+<form action="#" method="POST">
+	<div class="form-group">
+  <label for="usr">Email:</label>
+  <input type="email" class="form-control" name="email" value="{{email if email}}"/>
+</div>
+    <div class="form-group">
+      <label for="pwd">Occupation:</label>
+      <input type="text" class="form-control" name="occu" value="{{occu if occu}}"/>
+</div>
+<button type="submit" class="btn btn-success">Submit</button>
+</form>
+{% endblock %}
