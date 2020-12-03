@@ -9,5 +9,6 @@
 - Basic use of sessions
 - Basic use of a database
 - basic Html , Java , Bootstap
+- Basic use of Sockets
 ### add more things in templates and can even create a style.css file to make it better.
 ### Apply your brain
