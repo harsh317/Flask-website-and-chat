@@ -5,3 +5,4 @@
 - cd Flask-website-and-chat
 - python3 final.py
 - go to your web-browser on http://localhost:5000/
+### add more things in templates and can even create a style.css file to make it better.
